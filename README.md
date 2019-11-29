@@ -16,7 +16,7 @@
 |------|----|-------|
 |nickname|string|null: false|
 ### Association
-- has_many :users
+- has_many :messeage
 - has_many :groups, through: :groups_users
   has_many :groups_users
 
@@ -34,6 +34,6 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has many :users
-- has_many :groups, through: :group_users
+- has many :messages
+- has_many :users, through: :group_users
   has_many :groups_users
