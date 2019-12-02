@@ -75,15 +75,18 @@
   position: relative;
   width: 100%;
   display: flex;
+  form{
+    width: 100%;
+  }
   &__form1{
     height: 50px;
-    width: 100%;
+    width: 85%;
     padding: 0 10px 0 10px;
     }
   &__form2{
     position: absolute;
     top: 25px;
-    right: 150px;
+    right: 200px;
     font-size: 25px;
     }
   &__form3{
