@@ -20,7 +20,7 @@
           a
   .form
     = form_for "" do |f|
-      = f.text_field :name , class: 'form__form1', placeholder: "type a messeage"
-      = f.label :name, class: 'form__form2' do
+      = f.text_field :name , class: 'form__text-message', placeholder: "type a messeage"
+      = f.label :name, class: 'form__image-btn' do
         = icon("far", "image")
-      = f.submit "Send", class:"form__form3"
+      = f.submit "Send", class:"form__send-btn"
