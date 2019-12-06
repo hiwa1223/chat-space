@@ -8,17 +8,9 @@
           member:hoge sake take 
     = link_to "Edit", "#", class: 'main-header__edit-btn'
   .messages
-    .message(data-message_id="15368")
-      .message__upper-info
-        %p.message__upper-info-talker
-          a
-        %p.message__upper-info-date
-          2019/10/12
-      %div
-        %p.message_text
-          a
+    = render @messages
   .form
-    = form_for "" do |f|
+    = form_for [@group, @message] do |f|
       = f.text_field :name , class: 'form__text-message', placeholder: "type a messeage"
       = f.label :name, class: 'form__image-btn' do
         = icon("far", "image")
