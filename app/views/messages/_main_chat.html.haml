@@ -1,0 +1,18 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group(data-group_id="7597")
+        = @group.name
+      %ul.main-header__left-box__member-list
+        %li.main-header__left-box__member-list__member
+          - @group.users.each do |user|
+            = user.name
+    = link_to "Edit", edit_group_path(@group.id), class: 'main-header__edit-btn'
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__text-message', placeholder: "type a messeage"
+      = f.label :image, class: 'form__image-btn' do
+        = icon("far", "image")
+      = f.submit "Send", class:"form__send-btn"
