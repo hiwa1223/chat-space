@@ -66,7 +66,6 @@ $(function(){
 
 // 自動更新
 $(function(){
-  var buildHTML = function(message) {
     if (message.content && message.image) {
       var html = `<div class="message" data-message-id=` + message.id + `>`
         `<div class="upper-message">`
