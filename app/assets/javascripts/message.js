@@ -62,10 +62,12 @@ $(function(){
     })
     return false; 
   })
-});
+})
+
 
 // 自動更新
 $(function(){
+  function buildHTML2(message){
     if (message.content && message.image) {
       var html = `<div class="message" data-message-id=` + message.id + `>`
         `<div class="upper-message">`
@@ -116,7 +118,15 @@ $(function(){
       `</div>`
     };
     return html;
-  };
+  }
+  });
+
+
+
+
+
+
+
   var reloadMessages = function() {
     last_message_id = $(".message").last().data("messageId");
     if(window.location.href.match(/\/groups\/\d+\/messages/))
@@ -127,18 +137,21 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-        let html = buildHTML(data);
-        $('.messages').append(html); 
+        // let html = buildHTML(data);
+        // $('.messages').append(html); 
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         var insertHTML = '';
         $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
-      });
+          insertHTML += buildHTML2(message)
+   
       $('.messages').append(insertHTML);
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました');
-    })
-  }
+    });
+  });
+
+    // .fail(function() {
+    //   alert('自動更新に失敗しました');
+    // })
+
   setInterval(reloadMessages, 7000);
-})
+
+  };
