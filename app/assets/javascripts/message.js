@@ -36,9 +36,9 @@ $(function(){
       </div>
       </div>`
     return html;
-  };
-}
-
+    };
+  }
+  
   $("#new_message").on("submit", function(e){
     e.preventDefault() 
     let formdata = new FormData(this);
@@ -52,6 +52,7 @@ $(function(){
       contentType: false,
    })
     .done(function(data) {
+      console.log(data)
       let html = buildHTML(data);
       $('.messages').append(html); 
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');

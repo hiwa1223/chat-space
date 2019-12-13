@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path, notice: "メッセージを送信しました" }
-        format.json 
+        format.json
       end
     else
       @messages = @group.messages.includes(:user)
@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
   end
-
+  
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id, group_id:@group.id)
   end
