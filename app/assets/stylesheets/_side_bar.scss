@@ -18,14 +18,12 @@
       &__user-name{
         margin: 0;
         padding: 0;
+      }
       &__menu{
         display: flex;
-        &__new-group{
-          margin-left: 0.3rem;
-          }
-        &__edit-user{
-          margin-left: 0.3rem;
-          }
+        .icon {
+          color: white;
+          display: flex;
         }
       }
     }  
@@ -62,6 +60,15 @@
     // font-weight: bold;
     color: #ffffff;
   }
+
+.new__btn--icon{
+  background-color: white;
+}
+    
+  
+.edit__btn--icon{
+  background-color: white;
+}
 
 
 
